@@ -15,7 +15,7 @@ public class SessionInfoController {
 
     @GetMapping("/session-info")
     public String sessionInfo(HttpServletRequest request) {
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(false);
         if (session == null) {
             return "세션이 없습니다.";
         }
